@@ -1,11 +1,11 @@
 import React from 'react';
 
-function NotFound() {
+function Contact() {
     return (
         <div className=" flex justify-center items-center">
-            <p>Not Found !</p>
+            <p>Contact page</p>
         </div>
     );
 }
 
-export default NotFound;
+export default Contact;
