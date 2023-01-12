@@ -33,13 +33,11 @@ function App() {
 
     const router = createBrowserRouter([
         {
+            path: '/',
             element: <Root auth={auth} />,
             errorElement: <NotFound auth={auth} />,
             children: [
-                {
-                    path: '/',
-                    element: <Home />,
-                },
+                { index: true, element: <Home /> },
                 {
                     path: 'contact',
                     element: <Contact />,
@@ -49,11 +47,14 @@ function App() {
                     element: <About />,
                 },
                 {
-                    path: 'profile',
-                    element: <Profile />,
+                    path: '/profile',
                     children: [
                         {
-                            path: 'profile/:id',
+                            index: true,
+                            element: <Profile />,
+                        },
+                        {
+                            path: ':id',
                             element: <SpecificProfile />,
                         },
                     ],
