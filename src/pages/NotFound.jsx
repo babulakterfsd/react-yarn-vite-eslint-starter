@@ -1,11 +1,13 @@
-import React from 'react';
+import { useRouteError } from 'react-router-dom';
 
-function NotFound() {
+export default function NotFound() {
+    const error = useRouteError();
+
     return (
-        <div className=" flex justify-center items-center">
-            <p>Not Found !</p>
+        <div className="min-h-screen flex justify-center items-center">
+            <p>
+                <i>{error.statusText || error.message}</i>
+            </p>
         </div>
     );
 }
-
-export default NotFound;
