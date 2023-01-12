@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
+import PrivateRoute from './components/PrivateRoute';
 import Profile from './components/Profile';
 import SpecificProfile from './components/SpecificProfile';
 import AuthProvider from './contexts/AuthProvider';
@@ -55,6 +57,14 @@ function App() {
                             element: <SpecificProfile />,
                         },
                     ],
+                },
+                {
+                    path: 'dashboard',
+                    element: (
+                        <PrivateRoute auth={auth}>
+                            <Dashboard />
+                        </PrivateRoute>
+                    ),
                 },
             ],
         },
