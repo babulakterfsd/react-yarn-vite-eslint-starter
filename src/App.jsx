@@ -14,6 +14,7 @@ function App() {
         setIsLoggedIn(false);
     };
     const auth = { isLoggedIn, setIsLoggedIn, handleLogin, handleLogOut };
+
     return (
         <AuthProvider>
             <BrowserRouter>
