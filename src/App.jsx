@@ -34,7 +34,7 @@ function App() {
     const router = createBrowserRouter([
         {
             element: <Root auth={auth} />,
-            errorElement: <NotFound />,
+            errorElement: <NotFound auth={auth} />,
             children: [
                 {
                     path: '/',
