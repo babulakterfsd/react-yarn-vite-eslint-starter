@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Balance from './components/dashboard/Balance';
+import Dashboard from './components/dashboard/Dashboard';
+import Profile from './components/dashboard/Profile';
+import SpecificProfile from './components/dashboard/SpecificProfile';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
-import Profile from './components/Profile';
-import SpecificProfile from './components/SpecificProfile';
 import AuthProvider from './contexts/AuthProvider';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -17,6 +19,7 @@ function Root({ auth }) {
         <>
             <Navbar auth={auth} />
             <Outlet />
+            <Footer />
         </>
     );
 }
@@ -47,25 +50,28 @@ function App() {
                     element: <About />,
                 },
                 {
-                    path: '/profile',
-                    children: [
-                        {
-                            index: true,
-                            element: <Profile />,
-                        },
-                        {
-                            path: ':id',
-                            element: <SpecificProfile />,
-                        },
-                    ],
-                },
-                {
                     path: 'dashboard',
                     element: (
                         <PrivateRoute auth={auth}>
                             <Dashboard />
                         </PrivateRoute>
                     ),
+                    children: [
+                        {
+                            path: 'profile',
+                            element: <Profile />,
+                            children: [
+                                {
+                                    path: ':id',
+                                    element: <SpecificProfile />,
+                                },
+                            ],
+                        },
+                        {
+                            path: 'balance',
+                            element: <Balance />,
+                        },
+                    ],
                 },
             ],
         },
