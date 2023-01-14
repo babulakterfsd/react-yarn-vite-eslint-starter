@@ -3,7 +3,7 @@ import React from 'react';
 function AuthLayout() {
     return (
         <div>
-            <p>This is auth layout</p>
+            <div>{/* this layout will be used for authentication routes */}</div>
         </div>
     );
 }

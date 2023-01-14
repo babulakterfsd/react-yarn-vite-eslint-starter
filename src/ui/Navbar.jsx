@@ -7,7 +7,7 @@ function Navbar() {
     const { auth } = useAuth();
     const { isLoggedIn, handleLogin, handleLogOut } = auth;
     return (
-        <div className="flex justify-end mb-36">
+        <div className="flex justify-end mb-36 mt-4 mr-4">
             <nav className="bg-indigo-300 text-indigo-600 font-semibold py-2 px-4 gap-x-4 rounded-sm flex justify-evenly items-center">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>

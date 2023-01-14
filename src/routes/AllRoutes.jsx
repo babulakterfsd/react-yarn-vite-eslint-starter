@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Balance from '../components/dashboard/Balance';
-import Dashboard from '../components/dashboard/Dashboard';
 import Profile from '../components/dashboard/Profile';
 import SpecificProfile from '../components/dashboard/SpecificProfile';
 import AppLayout from '../Layout/AppLayout';
+import DashboardLayout from '../Layout/DashboardLayout';
 import About from '../views/About';
 import Contact from '../views/Contact';
 import ErrorPage from '../views/ErrorPage';
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 path: 'dashboard',
                 element: (
                     <PrivateRoute>
-                        <Dashboard />
+                        <DashboardLayout />
                     </PrivateRoute>
                 ),
                 children: [

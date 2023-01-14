@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 function Profile() {
+    const { id } = useParams();
     return (
         <div>
             <p>This is the profile component</p>
@@ -25,7 +26,11 @@ function Profile() {
                     3
                 </Link>
             </div>
-            <Outlet />
+            {id && (
+                <div className="mt-4 ml-4 text-indigo-300 bg-indigo-600 py-1 px-2 rounded-md text-center font-semibold">
+                    <Outlet />
+                </div>
+            )}
         </div>
     );
 }

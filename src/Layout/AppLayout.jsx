@@ -1,12 +1,18 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Footer from '../ui/Footer';
 import Navbar from '../ui/Navbar';
 
-function AppLayout({ auth }) {
+function AppLayout() {
     return (
         <>
-            <Navbar auth={auth} />
+            <Link
+                to="/"
+                className="absolute top-4 left-4 text-indigo-300 bg-indigo-600 p-2 text-center rounded-md font-bold"
+            >
+                Starter
+            </Link>
+            <Navbar />
             <Outlet />
             <Footer />
         </>
