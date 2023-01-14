@@ -7,7 +7,7 @@ function Balance() {
         // fetch balance from server
         setTimeout(() => {
             setBalance(7000);
-        }, 2000);
+        }, 1000);
     }, []);
 
     if (balance === 0) {
