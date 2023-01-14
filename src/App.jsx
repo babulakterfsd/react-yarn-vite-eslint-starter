@@ -8,11 +8,11 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import AuthProvider from './contexts/AuthProvider';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
 import './styles/App.css';
+import About from './views/About';
+import Contact from './views/Contact';
+import Home from './views/Home';
+import NotFound from './views/NotFound';
 
 function Root({ auth }) {
     return (
@@ -77,11 +77,19 @@ function App() {
         },
     ]);
 
+    // if context is used
     return (
         <AuthProvider>
             <RouterProvider router={router} />
         </AuthProvider>
     );
+
+    // if redux is used, import Provider from react-redux and store from store
+    // return (
+    //     <Provider store={store}>
+    //         <RouterProvider router={router} />
+    //     </Provider>
+    // );
 }
 
 export default App;
