@@ -1,7 +1,9 @@
 import { useRouteError } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import useAuth from '../hooks/useAuth';
+import Navbar from '../ui/Navbar';
 
-export default function NotFound({ auth }) {
+export default function ErrorPage() {
+    const { auth } = useAuth();
     const error = useRouteError();
 
     return (

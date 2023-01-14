@@ -11,3 +11,5 @@
             3. yarn
             4. react router latest version(6.6) with all routing system
             5. contextAPI setup
+
+## Here I put layouts, routes and other files / folder setup as just a starter pack. Layouts / Route setup might be changed as per project demands. Like, if any any project demands using redux, I will remove contextAPI then and will use redux instead. if any project demands firebase, I will add necessary files / folders for that. I mean, this is just a starter pack. It will be changed as per project demands, but the main thing is, I will not have to do all the setup again and again. I will just have to change the files / folders following the project requirements.

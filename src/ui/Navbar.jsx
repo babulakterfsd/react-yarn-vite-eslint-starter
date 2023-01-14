@@ -1,8 +1,10 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
-function Navbar({ auth }) {
+function Navbar() {
+    const { auth } = useAuth();
     const { isLoggedIn, handleLogin, handleLogOut } = auth;
     return (
         <div className="flex justify-end mb-36">
